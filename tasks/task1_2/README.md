@@ -10,3 +10,5 @@ Run the program, with and without a command line argument:
 
     kotlin HelloKt Joe
     kotlin HelloKt
+No submission is required for
+worksheet tasks and they do not form a part of the formal assessment of the module.
