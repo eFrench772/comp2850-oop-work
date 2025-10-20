@@ -7,12 +7,6 @@ fun main() {
    val chosen = pickRandomWord(words) //pick random word and remove from list then save word
    val valid = isValid(chosen)
 
-
-   println("Chosen word: $chosen")
-   println("Words left: ${words.size}")
-   println(valid)
-
-
    println("you have 10 tries to guess the word")
    for (i in 1..10) {
     var guess = obtainGuess(i)

@@ -33,19 +33,17 @@ fun obtainGuess(attempt: Int): String {
 }
 
 fun evaluateGuess(guess: String, target: String): List<Int> {
-   val guessletters = guess.toList()
+   val guessLetters = guess.toList()
    val targetLetters = target.toList()
-   var check = mutableListOf<Int>()
+   val check = mutableListOf<Int>()
 
-   for (i in 0..4) {
-      if (guessletters[i] == targetLetters[i]) {
-         check.add(1)
-      } else {
-         check.add(0)
-      }
+   for (i in 0 until guessLetters.size) {
+      check.add(if (guessLetters[i] == targetLetters[i]) 1 else 0)
    }
-   return check
+
+   return check.toList() // returns immutable List<Int> for Kotest
 }
+
 
 fun displayGuess(guess: String, matches: List<Int>) {
    val guessletters = guess.toList()
