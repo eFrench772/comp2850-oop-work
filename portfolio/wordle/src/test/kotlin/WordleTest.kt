@@ -13,6 +13,12 @@ class WordleTest : StringSpec({
         isValid("word") shouldBe false
     }
 
+    "isValid shouldn't allow empty or non-5-letter words" {
+    isValid("") shouldBe false
+    isValid("a") shouldBe false
+    isValid("toolong") shouldBe false
+    }
+
     "readWordList should return a not empty list" {
         val words = readWordList("data/words.txt")
         words.isNotEmpty() shouldBe true
@@ -33,4 +39,6 @@ class WordleTest : StringSpec({
         evaluateGuess("guard", target) shouldBe listOf(1, 1, 0, 0, 0)
         evaluateGuess("phone", target) shouldBe listOf(0, 0, 0, 0, 0)
     }
+
+
 })
